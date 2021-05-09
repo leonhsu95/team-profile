@@ -13,7 +13,7 @@ let emailVal = (input) => {
 
 // function idVal(input){
 //    if(managerQuestions.id == teamQuestions.id){
-//       return `Employee ID can not match existing manager ID. Try again.`;
+//       return `Employee's ID can not match existing manager ID. Try again.`;
 //    }
 //    if(!isNaN(input)){
 //       return `Invalid ID Number. Try again.`
@@ -36,7 +36,7 @@ const managerQuestions = [
     type: "input",
     name: "id",
     default: "0001",
-    message: "Please enter manager's employee ID.", 
+    message: "Please enter manager's employee's ID.", 
     validate: numberVal
 }, 
 {
@@ -57,14 +57,14 @@ const managerQuestions = [
     message: "Please enter manager's email address.", 
     validate: emailVal
 },      
-]   
+];  
 
 const engineerQuestions = [
 {
     type: "input",
     name: "id",
     default: "0002",
-    message: "Please enter employee ID.", 
+    message: "Please enter employee's ID.", 
     validate: numberVal
 }, 
 {
@@ -92,7 +92,7 @@ const internQuestions = [
     type: "input",
     name: "id",
     default: "0002",
-    message: "Please enter employee ID.", 
+    message: "Please enter employee's ID.", 
     validate: numberVal
 }, 
 {
@@ -110,7 +110,7 @@ const internQuestions = [
 {
     type: "input",
     name: "email",
-    message: "Please enter manager's email address.", 
+    message: "Please enter employee's email address.", 
     validate: emailVal
 },      
 ];
@@ -118,7 +118,7 @@ const internQuestions = [
 const addMember = [
 {
     type: "list",
-    name: "role",
+    name: "addMember",
     message: "Adding more members to your team?",
     choices: ["YES", "NO"]
 }, 
