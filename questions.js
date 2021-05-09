@@ -28,12 +28,6 @@ let emailVal = (input) => {
 const managerQuestions = [
 {
     type: "input",
-    name: "company",
-    message: "Please enter your company name.", 
-    validate: inputVal
-},
-{
-    type: "input",
     name: "id",
     default: "0001",
     message: "Please enter manager's employee's ID.", 
@@ -47,15 +41,15 @@ const managerQuestions = [
 }, 
 {
     type: "input",
-    name: "phone",
-    message: "Please enter manager's office number.", 
-    validate: numberVal
-},
-{
-    type: "input",
     name: "email",
     message: "Please enter manager's email address.", 
     validate: emailVal
+},
+{
+    type: "input",
+    name: "phone",
+    message: "Please enter manager's office number.", 
+    validate: numberVal
 },      
 ];  
 
@@ -118,15 +112,9 @@ const internQuestions = [
 const addMember = [
 {
     type: "list",
-    name: "addMember",
-    message: "Adding more members to your team?",
-    choices: ["YES", "NO"]
-}, 
-{
-    type: "list",
     name: "role",
-    message: "What type of employee are you adding?",
-    choices: ["Engineer", "Intern", "Manager"]
+    message: "Add more members?",
+    choices: ["Engineer", "Intern", "Manager", "NO"]
 }     
 ];
 
