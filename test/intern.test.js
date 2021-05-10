@@ -5,14 +5,14 @@ describe("Intern Test", () => {
     it("Can set name via constructor arguments", () => {
         const name = "Peter";
         const e = new Intern(' ', name);
-        expect(e.name).toBe(name);
+        expect(e.name).toBe("Peter");
     });
 
     it("Can set id via constructor arguments", () => {
         
         const id = "0001";
         const e = new Intern(id);
-        expect(e.id).toBe(id);
+        expect(e.id).toBe("0001");
     });
 
     it("Can set email via constructor arguments", () => {
