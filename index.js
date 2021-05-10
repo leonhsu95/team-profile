@@ -8,22 +8,79 @@ const Intern = require("./classes/intern");
 
 const writeFilePromise = util.promisify(fs.writeFile);
 
-const {managerQuestions, engineerQuestions, internQuestions, addMember} = require("./questions");
+const {managerQuestions, employeeQuestions} = require("./questions");
 
-const managerData = async(answers)=>{
+async function managerData(answers){
     try{
         const {id, name, email, phone} = answers;
-        const manager = new Manager(name, id, email, phone);
-        console.log(manager)
+        const manager = new Manager(id, name, email, phone);
+        console.log(manager);
     }catch(error){
         console.log(error);
     }
 }
 
+async function engineerData(answers){
+    try{
+        const {id, name, email, gitHub} = answers;
+        const engineer = new Engineer(id, name, email, gitHub);
+        console.log(engineer);
+    }catch(error){
+        console.log(error);
+    }
+}
+
+
+async function internData(answers){
+    try{
+        const {id, name, email, school} = answers;
+        const intern = new Intern(id, name, email, school);
+        console.log(intern);
+    }catch(error){
+        console.log(error);
+    }
+}
+
+async function addTeam(){
+    try{
+        const{role, addMore, ...answers} = await inquirer.prompt(employeeQuestions);
+        if(role === "Engineer"){
+            await engineerData(answers);
+        }
+        if(role === "Intern"){
+            await internData(answers);
+        }
+        if(role === "Manager"){
+            await managerData(answers);
+        }
+        if(addMore === "YES"){
+            await addTeam();
+        }
+        else{
+            return false;
+        }
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+
+async function generateTeam(){
+    try{
+        await addTeam();
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+
+
+
 function init(){
     inquirer.prompt(managerQuestions)
      .then(answers=>{
         managerData(answers);
+        generateTeam();
      })
      .catch(error => {
         if (error) {

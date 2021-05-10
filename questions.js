@@ -53,7 +53,13 @@ const managerQuestions = [
 },      
 ];  
 
-const engineerQuestions = [
+const employeeQuestions = [
+{
+    type: "list",
+    name: "role",
+    message: "What is the role of your employee?",
+    choices: ["Engineer", "Intern", "Manager"]
+},   
 {
     type: "input",
     name: "id",
@@ -65,12 +71,6 @@ const engineerQuestions = [
     type: "input",
     name: "name",
     message: "Please enter employee's name.", 
-    validate: inputVal
-}, 
-{
-    type: "input",
-    name: "github",
-    message: "Please enter employee's GitHub username.", 
     validate: inputVal
 },
 {
@@ -78,50 +78,31 @@ const engineerQuestions = [
     name: "email",
     message: "Please enter employee's email address.", 
     validate: emailVal
-},      
-];
-
-const internQuestions = [
-{
-    type: "input",
-    name: "id",
-    default: "0002",
-    message: "Please enter employee's ID.", 
-    validate: numberVal
 }, 
 {
     type: "input",
-    name: "name",
-    message: "Please enter employee's name.", 
-    validate: inputVal
-}, 
+    name: "gitHub",
+    message: "Please enter employee's GitHub username.", 
+    validate: inputVal,
+    when: answers => answers.role ===  "Engineer"
+},
 {
     type: "input",
     name: "school",
     message: "Please enter employee's school.", 
-    validate: inputVal
-},
-{
-    type: "input",
-    name: "email",
-    message: "Please enter employee's email address.", 
-    validate: emailVal
-},      
-];
-
-const addMember = [
+    validate: inputVal,
+    when: answers => answers.role ===  "Intern"
+},   
 {
     type: "list",
-    name: "role",
-    message: "Add more members?",
-    choices: ["Engineer", "Intern", "Manager", "NO"]
-}     
+    name: "addMore",
+    message: "Add more team members?",
+    choices: ["YES", "NO"]
+},  
 ];
 
 module.exports = {
     managerQuestions,
-    engineerQuestions,
-    internQuestions,
-    addMember
+    employeeQuestions
 }
 
