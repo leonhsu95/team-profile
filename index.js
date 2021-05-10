@@ -87,7 +87,7 @@ async function populateTemplate(employee){
     }
 }
 
-async function generateTeam(){
+async function generateTemplate(){
     try{
         await addTeam();
         const templateHTML = await readFilePromise("./templates/template.html", "utf8");
@@ -103,7 +103,7 @@ async function generateTeam(){
 function init(){
     inquirer.prompt(managerQuestions)
      .then(answers=>{
-        generateTeam();
+        generateTemplate();
         managerData(answers);
         
      })
