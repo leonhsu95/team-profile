@@ -90,10 +90,10 @@ async function populateTemplate(employee){
 async function generateTeam(){
     try{
         await addTeam();
-        const indexHTML = await readFilePromise("./templates/index.html", "utf8");
-        const indexHTMLArray = indexHTML.split("insert"); 
+        const templateHTML = await readFilePromise("./templates/template.html", "utf8");
+        const templateHTMLArray = templateHTML.split("insert"); 
         const generated = await readFilePromise("./templates/generated.html", "utf8");
-        await writeFilePromise("./output/team.html", indexHTMLArray[0] + generated + indexHTMLArray[1], "utf-8");
+        await writeFilePromise("index.html", templateHTMLArray[0] + generated + templateHTMLArray[1], "utf-8");
     }
     catch(error){
         console.log(error);
