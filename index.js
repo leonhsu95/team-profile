@@ -14,8 +14,11 @@ const readFilePromise = util.promisify(fs.readFile);
 const writeFilePromise = util.promisify(fs.writeFile);
 const appendFilePromise = util.promisify(fs.appendFile);
 
+// Grabs inquirer questions from questions.js
 const {managerQuestions, employeeQuestions} = require("./questions");
 
+
+// Populate user input information from inquirer and attach to classes and constructors.
 async function managerData(answers){
     try{
         const {id, name, email, officeNumber} = answers;
@@ -40,7 +43,6 @@ async function engineerData(answers){
     }
 }
 
-
 async function internData(answers){
     try{
         const {id, name, email, school} = answers;
@@ -53,6 +55,9 @@ async function internData(answers){
     }
 }
 
+// If statement to determine whether more employees are added or not. When new employee request is made, 
+// it saves the user input answer as according to the role of the new employee chosen from employeeQuestions in questions.js.
+//  Otherwise, return and cancel the current function and proceed with addTeam function
 async function addTeam(){
     try{
         const{role, addMore, ...answers} = await inquirer.prompt(employeeQuestions);
@@ -77,6 +82,7 @@ async function addTeam(){
     }
 }
 
+// Turns the directory file to template literals get template HTML into a string to display information saved from constructors
 async function populateTemplate(employee){
     try {
         const template = await readFilePromise(`./templates/${employee.getRole().toLowerCase()}.html`, "utf8");
@@ -87,6 +93,8 @@ async function populateTemplate(employee){
     }
 }
 
+// Gets user input info for Manager then Engineer and Intern. Once saved and stringified
+// turn HTML sections to array, split it when "insert" in identified and insert info saved into templates to html 
 async function generateTemplate(){
     try{
         await addTeam();
@@ -100,6 +108,7 @@ async function generateTemplate(){
     }
 }
 
+// Start function with inquirer to managerQuestions
 function init(){
     inquirer.prompt(managerQuestions)
      .then(answers=>{
