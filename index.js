@@ -12,8 +12,8 @@ const {managerQuestions, employeeQuestions} = require("./questions");
 
 async function managerData(answers){
     try{
-        const {id, name, email, phone} = answers;
-        const manager = new Manager(id, name, email, phone);
+        const {id, name, email, officeNumber} = answers;
+        const manager = new Manager(id, name, email, officeNumber);
         console.log(manager);
     }catch(error){
         console.log(error);
@@ -73,8 +73,6 @@ async function generateTeam(){
         console.log(error);
     }
 }
-
-
 
 function init(){
     inquirer.prompt(managerQuestions)

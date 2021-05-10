@@ -47,7 +47,7 @@ const managerQuestions = [
 },
 {
     type: "input",
-    name: "phone",
+    name: "officeNumber",
     message: "Please enter manager's office number.", 
     validate: numberVal
 },      
