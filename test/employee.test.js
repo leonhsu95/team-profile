@@ -1,6 +1,6 @@
 const Employee = require("../classes/employee.js");
 
-describe("Employee Test Sequence", () => {
+describe("Employee Test", () => {
     
     it("Can set name via constructor arguments", () => {
         const name = "Peter";
@@ -34,25 +34,25 @@ describe("Employee Test Sequence", () => {
 
         let e = new Employee(' ', name);
         expect(e.getName()).toEqual('Peter');
-    })
+    });
 
     it('Can get id via getID()', () => {
         let id = '0001';
 
         let e = new Employee(id);
         expect(e.getID()).toEqual('0001');
-    })
+    });
 
     it('Can get email via getEmail()', () => {
         let email = 'peter@gmail.com';
 
         let e = new Employee(' ', ' ', email);
         expect(e.getEmail()).toEqual('peter@gmail.com');
-    })
+    });
 
     it('getRole() should return "Employee"', () => {
         let e = new Employee();
         expect(e.getRole()).toEqual('Employee');
-    })
+    });
 
-})
+});
