@@ -29,7 +29,7 @@ describe("Intern Test", () => {
         expect(e.role).toBe("Intern");
     });
 
-    it('Can get officeNumber via getSchool()', () => {
+    it('Can get school name via getSchool()', () => {
         let school = 'UTS';
         let e = new Intern(' ', ' ', ' ', school);
         expect(e.getSchool()).toEqual('UTS');
