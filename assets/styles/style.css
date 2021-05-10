@@ -1,5 +1,11 @@
+.header-background{
+    background-color: #D52941;
+}
+
 h1{
     font-size: 2em;
+    font-weight: bold;
+    color: white;
 }
 
 h2{
@@ -11,6 +17,17 @@ h2{
     min-width: 15px;
     margin-left: -5px;
 }
-.subheading{
-    
+
+.manager{
+    background-color: #990D35;
+    color: white;
+}
+
+.engineer{
+    background-color: #2C497F;
+    color: white;
+}
+
+.intern{
+    background-color: #F9A03F;
 }

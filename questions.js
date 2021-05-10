@@ -57,7 +57,7 @@ const employeeQuestions = [
 {
     type: "list",
     name: "role",
-    message: "What is the role of your employee?",
+    message: "Please select the role of this employee.",
     choices: ["Engineer", "Intern", "Manager"]
 },   
 {
