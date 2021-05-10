@@ -22,7 +22,6 @@ async function managerData(answers){
         const manager = new Manager(id, name, email, officeNumber);
         const generated = await populateTemplate(manager);      
         await writeFilePromise("./templates/generated.html", generated, "utf8");  
-        console.log(manager);
     }
     catch(error){
         console.log(error);
@@ -35,7 +34,6 @@ async function engineerData(answers){
         const engineer = new Engineer(id, name, email, gitHub);
         const generated = await populateTemplate(engineer);      
         await appendFilePromise("./templates/generated.html", generated, "utf8");  
-        console.log(engineer);
     }
     catch(error){
         console.log(error);
@@ -48,8 +46,7 @@ async function internData(answers){
         const {id, name, email, school} = answers;
         const intern = new Intern(id, name, email, school);
         const generated = await populateTemplate(intern);      
-        await appendFilePromise("./templates/generated.html", generated, "utf8");  
-        console.log(intern);
+        await appendFilePromise("./templates/generated.html", generated, "utf8"); 
     }
     catch(error){
         console.log(error);
@@ -106,9 +103,9 @@ async function generateTeam(){
 function init(){
     inquirer.prompt(managerQuestions)
      .then(answers=>{
-        managerData(answers);
-        console.log("\nAdd employees to the team:")
         generateTeam();
+        managerData(answers);
+        
      })
      .catch(error => {
         if (error) {

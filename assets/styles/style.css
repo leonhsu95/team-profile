@@ -31,3 +31,19 @@ h2{
 .intern{
     background-color: #F9A03F;
 }
+
+a:link{
+    text-decoration: none;
+    color: blue;
+}
+
+a:link{
+    text-decoration: none;
+    color: blue;
+}
+
+a:link{
+    text-decoration: none;
+    color: blue;
+    opacity: 0.8;
+}
