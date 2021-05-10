@@ -1,6 +1,6 @@
 # Team Profile Generator
 
-Link to the deployed website repository can be viewed here: [Team Profile Generator](https://github.com/leonhsu95/team-profile)
+Link to the deployed website repository can be viewed here: [Team Profile Generator](https://leonhsu95.github.io/team-profile/)
 
 ## Description
 
