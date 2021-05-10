@@ -1,6 +1,6 @@
 # Team Profile Generator
 
-Link to the deployed website repository can be viewed here: [Team Profile Generator](https://github.com/leonhsu95/readme-generator)
+Link to the deployed website repository can be viewed here: [Team Profile Generator](https://github.com/leonhsu95/team-profile)
 
 ## Description
 
@@ -21,7 +21,7 @@ To install the files into your local repo, using Git Bash Terminal:
 2) Clone with SSH by
 
 ```GitBash Commands
-git clone git@github.com:leonhsu95/readme-generator.git"
+git clone git@github.com:git@github.com:leonhsu95/team-profile.git"
  ```
 
 Additionally, please install node.js and install the inquirer package in your terminal with
@@ -37,10 +37,11 @@ npm i nodemon
 ## Usage
 
 The project should look like this:
-![Applicaiton Screenshot](/screenshots/sceenshot.png)
-![Applicaiton Screenshot2](/screenshots/sceenshot2.png)
+![Application Screenshot](assets/screenshots/screenshot.png)
+![User Output to HTML](assets/screenshots/screenshot2.png)
+![Tests Passed](assets/screenshots/screenshot3.png)
 
-A Video Demonstration can be viewed here: [Demo](https://drive.google.com/file/d/188EJXxoUxlxIWGJZQ3RsapjoQDY3Ai7O/view?usp=sharing)
+A Video Demonstration can be viewed here: [Demo]()
 
 Usage of this project is subject to the below license.
 
@@ -75,7 +76,7 @@ SOFTWARE.
 ## Tests
 
 This project can be tested with [JS Validation Service](https://jshint.com/).
-The Inquirer Package can tested further, please refer to documentation at [npm Inquirer](https://www.npmjs.com/package/inquirer).
+The Inquirer Package can tested further, please refer to documentation at [npm Inquirer](https://www.npmjs.com/package/inquirer) and [npm nodemon](https://www.npmjs.com/package/nodemon).
 
 
 
